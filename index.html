@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/styles.css">
+    <title>Tienda de tenis</title>
+</head>
+<body>
+    <header>
+        <button class="menu-button" id="openMenu">
+        <img src="img/menu.png" alt="Icono Menu">
+        </button>
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <button class="cart-button" id="openCart">
+
+    <img src="img/cart.png" alt="Icono Carrito">
+
+    <span class="cart-badge" id="cartBadge">0</span>
+
+</button>
+    </header>
+
+    <aside class="side-menu" id="sideMenu">
+
+    <button class="close-menu" id="closeMenu">
+        &times;
+    </button>
+
+    <h2>MENÚ</h2>
+
+    <nav>
+
+        <a href="#">Inicio</a>
+
+        <a href="#">Productos</a>
+
+        <a href="#">Contacto</a>
+
+    </nav>
+
+</aside>
+
+    <main>
+        <section class="banner">
+            <h2>Productos Nuevos</h2>
+            <p>Conoce nuestros nuevos productos</p>
+        </section>
+
+        <section class="products">
+            <article>
+                <img src="img/faded3.png" alt="">
+                <h3>Tenis Faded 1</h3>
+                <p>$2,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/high3.png" alt="">
+                <h3>Tenis Up Cut 1</h3>
+                <p>$3,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/fosfo2.png" alt="">
+                <h3>Tenis Fosforecentes 1</h3>
+                <p>$1,500</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/bt3.png" alt="">
+                <h3>Tenis Casual 1</h3>
+                <p>$1,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/faded1.png" alt="">
+                <h3>Tenis Faded 2</h3>
+                <p>$2,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/high2.png" alt="">
+                <h3>Tenis Up Cut 2</h3>
+                <p>$3,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/fosfo1.png" alt="">
+                <h3>Tenis Fosforecentes 2</h3>
+                <p>$1,500</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/bt2.png" alt="">
+                <h3>Tenis Casual 2</h3>
+                <p>$1,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/faded2.png" alt="">
+                <h3>Tenis Faded 3</h3>
+                <p>$2,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/high1.png" alt="">
+                <h3>Tenis Up Cut 3</h3>
+                <p>$3,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/fosfo3.png" alt="">
+                <h3>Tenis Fosforecentes 3</h3>
+                <p>$1,500</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+            <article>
+                <img src="img/bt1.png" alt="">
+                <h3>Tenis Casual 3</h3>
+                <p>$1,000</p> 
+                <button class="add-cart">Agregar al carrito</button>
+            </article>
+
+        </section>
+
+        <section class="cart" id="cart">
+
+    <button class="close-cart" id="closeCart">
+        &times;
+    </button>
+
+    <h2>CARRITO</h2>
+
+    <div class="cart-items" id="cartItems">
+
+    </div>
+
+    <div class="cart-total">
+
+        <h3>
+
+            Total:
+
+            <span id="cartTotal">
+                $0
+            </span>
+
+        </h3>
+
+    </div>
+
+</section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
