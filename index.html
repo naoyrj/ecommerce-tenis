@@ -1,174 +1,531 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="scss/styles.css">
-    <title>Tienda de tenis</title>
+
+    <title>Tienda de Tenis</title>
 </head>
+
 <body>
-    <header>
-        <button class="menu-button" id="openMenu">
-        <img src="img/menu.png" alt="Icono Menu">
+
+    <header class="header">
+
+        <button
+            class="header__button header__button--menu"
+            id="openMenu"
+            type="button"
+            aria-label="Abrir menú"
+        >
+            <img
+                class="header__icon"
+                src="img/menu.png"
+                alt="Abrir menú"
+            >
         </button>
-        <img src="img/logo.png" alt="Logo" class="logo">
-        <button class="cart-button" id="openCart">
 
-    <img src="img/cart.png" alt="Icono Carrito">
+        <img
+            class="header__logo"
+            src="img/logo.png"
+            alt="Logo de Tienda de Tenis"
+        >
 
-    <span class="cart-badge" id="cartBadge">0</span>
+        <button
+            class="header__button header__button--cart"
+            id="openCart"
+            type="button"
+            aria-label="Abrir carrito"
+        >
 
-</button>
-    </header>
+            <img
+                class="header__icon"
+                src="img/cart.png"
+                alt="Carrito de compras"
+            >
 
-    <aside class="side-menu" id="sideMenu">
-
-    <button class="close-menu" id="closeMenu">
-        &times;
-    </button>
-
-    <h2>MENÚ</h2>
-
-    <nav>
-
-        <a href="#">Inicio</a>
-
-        <a href="#">Productos</a>
-
-        <a href="#">Contacto</a>
-
-    </nav>
-
-</aside>
-
-    <main>
-        <section class="banner">
-            <h2>Productos Nuevos</h2>
-            <p>Conoce nuestros nuevos productos</p>
-        </section>
-
-        <section class="products">
-            <article>
-                <img src="img/faded3.png" alt="">
-                <h3>Tenis Faded 1</h3>
-                <p>$2,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/high3.png" alt="">
-                <h3>Tenis Up Cut 1</h3>
-                <p>$3,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/fosfo2.png" alt="">
-                <h3>Tenis Fosforecentes 1</h3>
-                <p>$1,500</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/bt3.png" alt="">
-                <h3>Tenis Casual 1</h3>
-                <p>$1,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/faded1.png" alt="">
-                <h3>Tenis Faded 2</h3>
-                <p>$2,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/high2.png" alt="">
-                <h3>Tenis Up Cut 2</h3>
-                <p>$3,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/fosfo1.png" alt="">
-                <h3>Tenis Fosforecentes 2</h3>
-                <p>$1,500</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/bt2.png" alt="">
-                <h3>Tenis Casual 2</h3>
-                <p>$1,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/faded2.png" alt="">
-                <h3>Tenis Faded 3</h3>
-                <p>$2,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/high1.png" alt="">
-                <h3>Tenis Up Cut 3</h3>
-                <p>$3,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/fosfo3.png" alt="">
-                <h3>Tenis Fosforecentes 3</h3>
-                <p>$1,500</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/bt1.png" alt="">
-                <h3>Tenis Casual 3</h3>
-                <p>$1,000</p> 
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-            <article>
-                <img src="img/faded3.png" alt="Tenis Faded 4">
-                <h3>Tenis Faded 4</h3>
-                <p>$2,500</p>
-                <button class="add-cart">Agregar al carrito</button>
-            </article>
-
-        </section>
-
-        <section class="cart" id="cart">
-
-    <button class="close-cart" id="closeCart">
-        &times;
-    </button>
-
-    <h2>CARRITO</h2>
-
-    <div class="cart-items" id="cartItems">
-
-    </div>
-
-    <div class="cart-total">
-
-        <h3>
-
-            Total:
-
-            <span id="cartTotal">
-                $0
+            <span
+                class="header__badge"
+                id="cartBadge"
+            >
+                0
             </span>
 
-        </h3>
+        </button>
 
-    </div>
+    </header>
 
-</section>
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+    >
+
+        <button
+            class="side-menu__close"
+            id="closeMenu"
+            type="button"
+            aria-label="Cerrar menú"
+        >
+            &times;
+        </button>
+
+        <h2 class="side-menu__title">
+            MENÚ
+        </h2>
+
+        <nav class="side-menu__nav">
+
+            <a
+                class="side-menu__link"
+                href="#"
+            >
+                Inicio
+            </a>
+
+            <a
+                class="side-menu__link"
+                href="#products"
+            >
+                Productos
+            </a>
+
+            <a
+                class="side-menu__link"
+                href="#cart"
+            >
+                Carrito
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main>
+
+        <section class="banner">
+
+            <div class="banner__content">
+
+                <h1 class="banner__title">
+                    Productos Nuevos
+                </h1>
+
+                <p class="banner__text">
+                    Conoce nuestros nuevos productos
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section
+            class="products"
+            id="products"
+        >
+
+            <h2 class="products__heading">
+                Nuestros productos
+            </h2>
+
+
+            <div class="products__grid">
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/faded3.png"
+                        alt="Tenis Faded 1"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Faded 1
+                    </h3>
+
+                    <p class="products__price">
+                        $2,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/high3.png"
+                        alt="Tenis Up Cut 1"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Up Cut 1
+                    </h3>
+
+                    <p class="products__price">
+                        $3,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/fosfo2.png"
+                        alt="Tenis Fosforescentes 1"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Fosforescentes 1
+                    </h3>
+
+                    <p class="products__price">
+                        $1,500
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/bt3.png"
+                        alt="Tenis Casual 1"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Casual 1
+                    </h3>
+
+                    <p class="products__price">
+                        $1,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/faded1.png"
+                        alt="Tenis Faded 2"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Faded 2
+                    </h3>
+
+                    <p class="products__price">
+                        $2,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/high2.png"
+                        alt="Tenis Up Cut 2"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Up Cut 2
+                    </h3>
+
+                    <p class="products__price">
+                        $3,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/fosfo1.png"
+                        alt="Tenis Fosforescentes 2"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Fosforescentes 2
+                    </h3>
+
+                    <p class="products__price">
+                        $1,500
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/bt2.png"
+                        alt="Tenis Casual 2"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Casual 2
+                    </h3>
+
+                    <p class="products__price">
+                        $1,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/faded2.png"
+                        alt="Tenis Faded 3"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Faded 3
+                    </h3>
+
+                    <p class="products__price">
+                        $2,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/high1.png"
+                        alt="Tenis Up Cut 3"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Up Cut 3
+                    </h3>
+
+                    <p class="products__price">
+                        $3,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/fosfo3.png"
+                        alt="Tenis Fosforescentes 3"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Fosforescentes 3
+                    </h3>
+
+                    <p class="products__price">
+                        $1,500
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/bt1.png"
+                        alt="Tenis Casual 3"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Casual 3
+                    </h3>
+
+                    <p class="products__price">
+                        $1,000
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+                <article class="products__item">
+
+                    <img
+                        class="products__image"
+                        src="img/faded3.png"
+                        alt="Tenis Faded 4"
+                    >
+
+                    <h3 class="products__title">
+                        Tenis Faded 4
+                    </h3>
+
+                    <p class="products__price">
+                        $2,500
+                    </p>
+
+                    <button
+                        class="products__button add-cart"
+                        type="button"
+                    >
+                        Agregar al carrito
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <aside
+            class="cart"
+            id="cart"
+        >
+
+            <button
+                class="cart__close"
+                id="closeCart"
+                type="button"
+                aria-label="Cerrar carrito"
+            >
+                &times;
+            </button>
+
+            <h2 class="cart__title">
+                CARRITO
+            </h2>
+
+            <div
+                class="cart__items"
+                id="cartItems"
+            >
+            </div>
+
+            <div class="cart__total">
+
+                <h3 class="cart__total-title">
+                    Total:
+
+                    <span
+                        class="cart__total-price"
+                        id="cartTotal"
+                    >
+                        $0
+                    </span>
+
+                </h3>
+
+            </div>
+
+        </aside>
+
     </main>
+
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
