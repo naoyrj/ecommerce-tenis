@@ -703,3 +703,19 @@ header {
         }
     }
 }
+.add-cart {
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: $font-small;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $color-secondary;
+        transform: scale(1.05);
+    }
+}
