@@ -51,9 +51,11 @@ botonesCarrito.forEach(function(boton) {
 
         productosCarrito.push(nuevoProducto);
 
-        actualizarCarrito();
+actualizarCarrito();
 
-        cart.classList.add("active");
+cart.classList.add("active");
+
+alert(nombre + " fue agregado al carrito");
 
     });
 
