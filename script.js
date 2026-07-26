@@ -1,117 +1,159 @@
-const openMenu = document.getElementById("openMenu");
-const closeMenu = document.getElementById("closeMenu");
+const openMenuButton = document.getElementById("openMenu");
+const closeMenuButton = document.getElementById("closeMenu");
 const sideMenu = document.getElementById("sideMenu");
 
-const openCart = document.getElementById("openCart");
-const closeCart = document.getElementById("closeCart");
+const openCartButton = document.getElementById("openCart");
+const closeCartButton = document.getElementById("closeCart");
 const cart = document.getElementById("cart");
 
-const botonesCarrito = document.querySelectorAll(".add-cart");
 const cartItems = document.getElementById("cartItems");
 const cartBadge = document.getElementById("cartBadge");
 const cartTotal = document.getElementById("cartTotal");
 
-let productosCarrito = [];
+const addCartButtons = document.querySelectorAll(".add-cart");
 
-openMenu.addEventListener("click", function() {
+let cartProducts = [];
+
+openMenuButton.addEventListener("click", () => {
     sideMenu.classList.add("active");
 });
 
-closeMenu.addEventListener("click", function() {
+closeMenuButton.addEventListener("click", () => {
     sideMenu.classList.remove("active");
 });
 
-openCart.addEventListener("click", function() {
+openCartButton.addEventListener("click", () => {
     cart.classList.add("active");
 });
 
-closeCart.addEventListener("click", function() {
+closeCartButton.addEventListener("click", () => {
     cart.classList.remove("active");
 });
 
-botonesCarrito.forEach(function(boton) {
+addCartButtons.forEach((button) => {
 
-    boton.addEventListener("click", function() {
+    button.addEventListener("click", () => {
 
-        const producto = boton.parentElement;
+        const product = button.closest(".products__item");
 
-        const imagen = producto.querySelector("img").src;
-        const nombre = producto.querySelector("h3").textContent;
-        const precioTexto = producto.querySelector("p").textContent;
+        const productImage = product.querySelector(".products__image").src;
 
-        const precio = Number(
-            precioTexto.replace("$", "").replace(",", "")
+        const productName = product.querySelector(".products__title").textContent.trim();
+
+        const productPriceText = product.querySelector(".products__price").textContent.trim();
+
+        const productPrice = Number(
+            productPriceText
+                .replace("$", "")
+                .replace(",", "")
         );
 
-        const nuevoProducto = {
-            imagen: imagen,
-            nombre: nombre,
-            precio: precio
+        const newProduct = {
+            id: Date.now(),
+            name: productName,
+            price: productPrice,
+            image: productImage
         };
 
-        productosCarrito.push(nuevoProducto);
+        cartProducts.push(newProduct);
 
-actualizarCarrito();
+        updateCart();
 
-cart.classList.add("active");
+        cart.classList.add("active");
 
-alert(nombre + " fue agregado al carrito");
+        alert(`${productName} fue agregado al carrito`);
 
     });
 
 });
 
-function actualizarCarrito() {
+function updateCart() {
 
     cartItems.innerHTML = "";
 
-    productosCarrito.forEach(function(producto, index) {
+    let total = 0;
 
-        const productoCarrito = document.createElement("div");
+    cartProducts.forEach((product) => {
 
-        productoCarrito.classList.add("cart-product");
+        total += product.price;
 
-        productoCarrito.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            
-            <div>
-                <p>${producto.nombre}</p>
-                <p>$${producto.precio.toLocaleString()}</p>
+        const cartProduct = document.createElement("div");
+
+        cartProduct.classList.add("cart__item");
+
+        cartProduct.innerHTML = `
+            <img
+                class="cart__image"
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+            <div class="cart__info">
+
+                <p class="cart__product-name">
+                    ${product.name}
+                </p>
+
+                <p class="cart__product-price">
+                    $${product.price.toLocaleString("es-MX")}
+                </p>
+
             </div>
 
-            <button class="delete-product" data-index="${index}">
-                Eliminar
+            <button
+                class="cart__delete"
+                type="button"
+                data-id="${product.id}"
+                aria-label="Eliminar producto"
+            >
+
+                <img
+                    class="cart__delete-image"
+                    src="img/borrar.png"
+                    alt="Eliminar producto"
+                >
+
             </button>
         `;
 
-        cartItems.appendChild(productoCarrito);
+        cartItems.appendChild(cartProduct);
 
     });
 
-    cartBadge.textContent = productosCarrito.length;
+    cartBadge.textContent = cartProducts.length;
 
-    let total = 0;
+    cartTotal.textContent = `$${total.toLocaleString("es-MX")}`;
 
-    productosCarrito.forEach(function(producto) {
-        total += producto.precio;
-    });
+    const deleteButtons = document.querySelectorAll(".cart__delete");
 
-    cartTotal.textContent = "$" + total.toLocaleString();
+    deleteButtons.forEach((button) => {
 
-    const botonesEliminar = document.querySelectorAll(".delete-product");
+        button.addEventListener("click", () => {
 
-    botonesEliminar.forEach(function(boton) {
+            const productId = Number(
+                button.dataset.id
+            );
 
-        boton.addEventListener("click", function() {
+            cartProducts = cartProducts.filter(
+                (product) => product.id !== productId
+            );
 
-            const index = Number(boton.dataset.index);
-
-            productosCarrito.splice(index, 1);
-
-            actualizarCarrito();
+            updateCart();
 
         });
 
     });
 
 }
+
+const menuLinks = document.querySelectorAll(".side-menu__link");
+
+menuLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        sideMenu.classList.remove("active");
+
+    });
+
+});
